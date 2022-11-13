@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamburger</title> 
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: rgb(3, 16, 39);
+}
+.container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+.line{
+    background-color: #fff;
+    width: 46px;
+    height: 6px;
+    border-radius: 10px;
+    transition: 0.3s ease-in-out;
+}
+.container:hover{
+    cursor: pointer;
+}
+.container:hover .line{
+    background: rgb(241, 190, 47);
+}
+.container:hover .line-1{
+    transform: translateY(-15px);
+}
+.container:hover .line-2{
+    opacity: 0;
+}
+.container:hover .line-3{
+    transform: translateY(15px);
+}
+.container .menu{
+    visibility: hidden;
+    position: absolute;
+    top: -8px;
+    left: -126px;
+}
+.container:hover .menu{
+    visibility: visible;
+}
+.container .menu ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    list-style-type: none;
+    padding: 14px;
+    opacity: 0;
+}
+.container:hover .menu ul{
+    opacity: 1;
+}
+.menu li{
+    color: #fff;
+    font-size: 20px;
+    transition: 0.2s ease;
+}
+.menu li:hover{
+    color: rgb(241, 190, 47);
+}
+    </style>
+   <script src="main.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="line line-1"></div>
+        <div class="line line-2"></div>
+        <div class="line line-3"></div>
+
+        <div class="menu">
+            <ul id="list">
+                <li>Home</li>
+                <li>Service</li>
+                <li>Portfolio</li>
+                <li>About</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
